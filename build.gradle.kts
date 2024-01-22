@@ -20,7 +20,6 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
@@ -29,7 +28,14 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 	implementation("org.springframework.boot:spring-boot-devtools:3.2.0")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
 	implementation("org.redisson:redisson:3.24.3")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.2.2")
+	implementation("org.postgresql:r2dbc-postgresql:1.0.4.RELEASE")
+	runtimeOnly("org.postgresql:postgresql:42.7.1")
+
 	if (osdetector.arch.equals("aarch_64")) {
 		implementation("io.netty:netty-all")
 	}
